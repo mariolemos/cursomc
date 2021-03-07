@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.mariolemos.cursomc.domain.Categoria;
 import com.mariolemos.cursomc.repositories.CategoriaRepository;
+import com.mariolemos.cursomc.services.exceptions.ObjectNotFoundException;
 
 
 @Service
@@ -18,10 +19,10 @@ public class CategoriaService {
 	
 	public Categoria buscar(Integer id) {
 		Optional<Categoria> obj = repo.findById(id);
-		return obj.orElse(null);
+		return obj.orElseThrow(()-> new ObjectNotFoundException("Objeto nâo encontrado! Id: " + id + ", Tipo:" + Categoria.class.getName()));
 	}
 	
-	public void salvar(Categoria obj) {
+/*	public void salvar(Categoria obj) {
 		repo.save(obj);
 	}
 	
@@ -29,6 +30,6 @@ public class CategoriaService {
 		List<Categoria> obj = repo.findAll();
 		return obj;
 		
-	}
+	}*/
 
 }

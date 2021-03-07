@@ -26,7 +26,7 @@ public class CategoriaResource {
 		return ResponseEntity.ok().body(obj);		
 	}
 
-	@RequestMapping(value = "/cadastrar", method = RequestMethod.POST)
+	/*@RequestMapping(value = "/cadastrar", method = RequestMethod.POST)
 	 public ResponseEntity<Void> salvar(@RequestBody Categoria obj) {
 		 service.salvar(obj);
 		 return ResponseEntity.ok().build();
@@ -35,6 +35,6 @@ public class CategoriaResource {
 	 public ResponseEntity<List<Categoria>> listarTodos() {
 		 List<Categoria> obj = service.buscarTodos();
 		 return ResponseEntity.ok().body(obj);
-	 }
+	 }*/
 
 }
