@@ -1,6 +1,5 @@
 package com.mariolemos.cursomc.services;
 
-import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,11 +21,12 @@ public class CategoriaService {
 		return obj.orElseThrow(()-> new ObjectNotFoundException("Objeto nâo encontrado! Id: " + id + ", Tipo:" + Categoria.class.getName()));
 	}
 	
-/*	public void salvar(Categoria obj) {
-		repo.save(obj);
+	public Categoria insert(Categoria obj) {
+		obj.setId(null);;
+		return repo.save(obj);
 	}
 	
-	public List<Categoria> buscarTodos() {
+/*	public List<Categoria> buscarTodos() {
 		List<Categoria> obj = repo.findAll();
 		return obj;
 		
