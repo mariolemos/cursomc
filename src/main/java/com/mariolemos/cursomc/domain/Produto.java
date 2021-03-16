@@ -81,7 +81,7 @@ public class Produto implements Serializable {
 		this.nome = nome;
 	}
 	
-	public Double preco() {
+	public Double getPreco() {
 		return preco;
 	}
 	
